@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-type Props = {};
+type Props = {
+  showModal: boolean;
+  setShowModal: (value: boolean) => void;
+};
 
-const CreateModal = (props: Props) => {
-  const [showModal, setShowModal] = useState(true);
+const CreateModal: React.FC<Props> = ({ showModal, setShowModal }) => {
   return (
     <div className="">
       {showModal ? (
