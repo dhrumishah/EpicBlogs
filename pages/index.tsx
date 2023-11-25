@@ -5,7 +5,7 @@ import CreateModal from "./components/CreateModal";
 import React, { useState } from "react";
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="bg-[#222629] min-h-screen text-white">
       <main className="p-4 relative">
