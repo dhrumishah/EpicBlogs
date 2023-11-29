@@ -33,7 +33,7 @@ const Create: React.FC<Props> = (props: Props) => {
     } else {
       const data = await publicClient.simulateContract({
         account,
-        address: "0xCc113c8555879715B51e8b4E3B31377FaF92CE42",
+        address: "0xE92ac71C430c605E0D45Fc1dA64979ea75A946a4",
         abi: ABI,
         functionName: "createPost",
         args: [blogTitle, blogContent],
