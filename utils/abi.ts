@@ -1,4 +1,4 @@
-[
+const ABI = [
 	{
 		"inputs": [
 			{
@@ -154,3 +154,5 @@
 		"type": "function"
 	}
 ]
+
+export default ABI
