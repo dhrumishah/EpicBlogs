@@ -4,8 +4,10 @@ import { usePublicClient, useWalletClient } from "wagmi";
 import ABI from "../../utils/abi";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+
 type Props = {};
-const Create = () => {
+
+const Create: React.FC<Props> = (props: Props) => {
   const [blogTitle, setBlogTitle] = useState("");
   const [blogContent, setBlogContent] = useState("");
 
@@ -20,6 +22,11 @@ const Create = () => {
 
     if (!account) {
       toast.error("Connect your wallet first!", {
+        isLoading: false,
+        autoClose: 3000,
+      });
+    } else if (blogTitle === "" || blogContent === "") {
+      toast.error("Fill both the fields", {
         isLoading: false,
         autoClose: 3000,
       });

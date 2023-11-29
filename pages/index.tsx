@@ -7,8 +7,16 @@ import ABI from "../utils/abi";
 import { useRouter } from "next/navigation";
 import BlogCard from "./components/BlogCard";
 
+interface Blog {
+  id: bigint;
+  title: string;
+  content: string;
+  author: string;
+  isDeleted: boolean;
+}
+
 export default function Home() {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
   const router = useRouter();
@@ -23,6 +31,7 @@ export default function Home() {
     });
     await setBlogs(result);
   };
+
   useEffect(() => {
     getAllBlogs();
   }, []);
@@ -55,17 +64,17 @@ export default function Home() {
 
         <div className="flex flex-wrap justify-center mt-10">
           {blogs.length > 0 ? (
-            blogs?.map((blog) =>
-              blog["isDeleted"] === false ? (
+            blogs
+              .filter((blog) => !blog.isDeleted)
+              .map((blog) => (
                 <BlogCard
-                  key={blog["id"]}
-                  id={blog["id"]}
-                  blogTitle={blog["title"]}
-                  blogContent={blog["content"]}
-                  blogAuthor={blog["author"]}
+                  key={blog.id}
+                  id={blog.id}
+                  blogTitle={blog.title}
+                  blogContent={blog.content}
+                  blogAuthor={blog.author}
                 />
-              ) : null
-            )
+              ))
           ) : (
             <div className="mt-12">
               <p className="text-xl md:text-3xl text-white font-bold text-center">

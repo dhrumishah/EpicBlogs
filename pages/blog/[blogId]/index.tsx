@@ -7,10 +7,16 @@ import { usePublicClient, useWalletClient, useAccount } from "wagmi";
 import ABI from "../../../utils/abi";
 import { toast } from "react-toastify";
 
+interface BlogDetails {
+  blogAuthor: string;
+  blogTitle: string;
+  blogContent: string;
+}
+
 // Custom hook for fetching blog details
 const useBlogDetails = (blogId: string) => {
   const publicClient = usePublicClient();
-  const [blogDetails, setBlogDetails] = useState({
+  const [blogDetails, setBlogDetails] = useState<BlogDetails>({
     blogAuthor: "",
     blogTitle: "",
     blogContent: "",
@@ -47,7 +53,7 @@ const BlogId = () => {
   const { blogAuthor, blogTitle, blogContent } = useBlogDetails(blogId);
   const publicClient = usePublicClient();
 
-  const deleteBlog = async (e: any) => {
+  const deleteBlog = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     if (account === blogAuthor) {

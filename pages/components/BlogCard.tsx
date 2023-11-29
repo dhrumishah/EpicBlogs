@@ -1,23 +1,19 @@
 import Image from "next/image";
 import Avatar from "./../../assets/avatar.jpeg";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
-type Props = {
+interface Props {
   id: bigint;
   blogTitle: string;
   blogContent: string;
   blogAuthor: string;
-};
-const BlogCard = (props: Props) => {
-  const router = useRouter();
+}
+
+const BlogCard: React.FC<Props> = (props) => {
   const blogId = Number(props.id);
 
-  const navigateToBlogPage = () => {
-    router.push(`/blog/${blogId}`);
-  };
   return (
-    <Link className="p-6 max-w-sm" href={`/blog/${blogId}`}>
+    <Link href={`/blog/${blogId}`} className="p-6 max-w-sm">
       <div className="flex rounded-lg h-full bg-transparent border-2 p-4 border-[#86C232] hover:border-white hover:cursor-pointer hover:scale-105 flex-col">
         <h3 className="text-xl md:text-3xl font-semibold md:font-bold">
           {props.blogTitle}
