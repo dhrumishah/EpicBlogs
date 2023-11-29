@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EpicBlogs
+### Immerse yourself in a world of creativity and expression at EpicBlogs — where every post is a brushstroke in the canvas of your unique reading journey.
 
-## Getting Started
+## What things I have done?
+- Implemented 1 custom hook
+- Could not implement fetching of blogs in SSR since fetching uses `publicClient` from `viem` library and that hook cannot be called inside SSR.
+- I have written code in Typescript ensuring null checks, type safety, etc.
+- I have taken care of SEO by adding 2 line content on home page, adding `link` tags whenever something has redirection to other page since Google Bots give priority to `link` tags instead of `div` tags.
+- I have used `Rainbowkit` for connecting wallet to the Dapp.
+- I have made sure the code is reusable such as use of `Navbar` component.
+- I have also used `Toastify` library to give good User experience to the user.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Screenshots
+1. Create Blog
+   <img width="1223" alt="image" src="https://github.com/dhrumishah/EpicBlogs/assets/84569241/7afa4e3a-d6e2-4f30-a934-ef2a80861e3c">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Home page
+   <img width="1235" alt="image" src="https://github.com/dhrumishah/EpicBlogs/assets/84569241/1554d697-1bc5-43ea-95a0-270fbbf270bc">
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Blog Page
+ <img width="1251" alt="image" src="https://github.com/dhrumishah/EpicBlogs/assets/84569241/5eaf8afb-2627-44ef-bf6e-631e5243a6c6">
