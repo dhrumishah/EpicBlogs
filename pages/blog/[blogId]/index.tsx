@@ -25,7 +25,7 @@ const useBlogDetails = (blogId: string) => {
   useEffect(() => {
     const getBlogDetailsById = async () => {
       const { result }: any = await publicClient.simulateContract({
-        address: "0xCc113c8555879715B51e8b4E3B31377FaF92CE42",
+        address: "0xE92ac71C430c605E0D45Fc1dA64979ea75A946a4",
         abi: ABI,
         functionName: "viewPost",
         args: [blogId],
@@ -59,7 +59,7 @@ const BlogId = () => {
     if (account === blogAuthor) {
       const data = await publicClient.simulateContract({
         account,
-        address: "0xCc113c8555879715B51e8b4E3B31377FaF92CE42",
+        address: "0xE92ac71C430c605E0D45Fc1dA64979ea75A946a4",
         abi: ABI,
         functionName: "deletePost",
         args: [blogId],
