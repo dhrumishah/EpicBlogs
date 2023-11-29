@@ -9,6 +9,7 @@
 - I have used `Rainbowkit` for connecting wallet to the Dapp.
 - I have made sure the code is reusable such as use of `Navbar` component.
 - I have also used `Toastify` library to give good User experience to the user.
+- If a user is on a wrong network, the connect wallet will show it as red to let user know that he/she need to switch to correct network.
 
 
 ## Screenshots
